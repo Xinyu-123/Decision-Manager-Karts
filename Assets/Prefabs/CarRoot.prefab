@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &957805839817253286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9197837998293533336}
+  m_Layer: 0
+  m_Name: ItemSpawnLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9197837998293533336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957805839817253286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.923}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3816423254749270957}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3816423253702784560
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +548,7 @@ Transform:
   m_Children:
   - {fileID: 3816423254617785916}
   - {fileID: 3816423255161199011}
+  - {fileID: 9197837998293533336}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -555,6 +586,11 @@ MonoBehaviour:
   maxMotorTorque: 2000
   maxSteeringAngle: 30
   axleLogic: {fileID: 11400000, guid: 446d5d71dc0b21744aefae48f0fc73b7, type: 2}
+  fireItemLogic: {fileID: 11400000, guid: 04bdb03ace08eee48b40b0b9873ade68, type: 2}
+  collisionLogic: {fileID: 11400000, guid: 242d1638e11fae046a13a049e1f364b4, type: 2}
+  triggerLogic: {fileID: 11400000, guid: 0f399383a0d7eb449a1300a69f9f5577, type: 2}
+  itemSpawnLoc: {fileID: 9197837998293533336}
+  heldItem: {fileID: 0}
 --- !u!114 &3816423254749270958
 MonoBehaviour:
   m_ObjectHideFlags: 0

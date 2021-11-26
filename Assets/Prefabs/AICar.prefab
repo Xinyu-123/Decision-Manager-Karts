@@ -551,10 +551,11 @@ MonoBehaviour:
   axleInfos:
   - {fileID: 3816423254810306574}
   - {fileID: 3816423254205996156}
-  waypoints: []
+  waypointParent: {fileID: 0}
   maxMotorTorque: 1800
   maxSteeringAngle: 0
   waypointIncrementer: {fileID: 11400000, guid: b1f27630d08ff0940ab12e3ddbdc3e9b, type: 2}
+  itemCollision: {fileID: 11400000, guid: 242d1638e11fae046a13a049e1f364b4, type: 2}
 --- !u!1 &3816423254808698919
 GameObject:
   m_ObjectHideFlags: 0

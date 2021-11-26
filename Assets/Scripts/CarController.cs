@@ -8,10 +8,22 @@ public class CarController : MonoBehaviour
     [SerializeField] float maxMotorTorque; // maximum torque the motor can apply to wheel
     [SerializeField] float maxSteeringAngle; // maximum steer angle the wheel can have
     [SerializeField] LogicSequenceSO axleLogic;
+    [SerializeField] LogicSequenceSO fireItemLogic;
+    [SerializeField] CollisionLogicSequenceSO collisionLogic;
+    [SerializeField] TriggerLogicSequenceSO triggerLogic;
+
+    public Transform itemSpawnLoc;
+
+    public GameObject heldItem;
+
+    private void Update()
+    {
+        fireItemLogic.Evaluate(gameObject);
+    }
+
 
     public void FixedUpdate()
     {
-        // Move this into a decision manager
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
@@ -25,5 +37,24 @@ public class CarController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        collisionLogic.Evaluate(gameObject, collision);
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        triggerLogic.Evaluate(gameObject, other);
+    }
+
+    public void ResetVelocity()
+    {
+        // Reset all velocity to 0
+        foreach (AxleInfo axleInfo in axleInfos)
+        {
+            axleInfo.leftWheel.attachedRigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            axleInfo.rightWheel.attachedRigidbody.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+        }
+        
+    }
 }
