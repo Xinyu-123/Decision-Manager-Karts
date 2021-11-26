@@ -11,11 +11,11 @@ using UnityEngine;
 public class Expression
 {
     [SerializeField]
-    private Condition _condition;
+    public Condition _condition;
     [SerializeField]
-    private Response _response;
+    public Response _response;
 
-    public bool Evaluate()
+    public bool Evaluate(GameObject _recipient)
     {
         if (_condition == null)
         {
@@ -23,10 +23,10 @@ public class Expression
             return false;
         }
 
-        bool result = _condition.Evaluate();
+        bool result = _condition.Evaluate(_recipient);
         if(result == true)
         {
-            _response.Dispatch();
+            _response.Dispatch(_recipient);
         }
 
         return result;

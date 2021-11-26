@@ -4,5 +4,5 @@ using UnityEngine;
 
 abstract public class Response : MonoBehaviour
 {
-    abstract public void Dispatch();
+    abstract public void Dispatch(GameObject _gameObject);
 }

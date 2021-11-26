@@ -4,6 +4,6 @@ using UnityEngine;
 
 abstract public class Condition : MonoBehaviour
 {
-    abstract public bool Evaluate(); // generic condition to evalute
+    abstract public bool Evaluate(GameObject _gameObject); // generic condition to evalute
 
 }
