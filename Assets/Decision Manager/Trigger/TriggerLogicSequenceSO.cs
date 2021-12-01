@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "Scripable Objects/TriggerLogicSequenceSO", order = 2)]
+[CreateAssetMenu(fileName = "Data", menuName = "Scriptable Objects/TriggerLogicSequenceSO", order = 2)]
 public class TriggerLogicSequenceSO : ScriptableObject
 {
     [SerializeField] List<TriggerExpression> expressions;
